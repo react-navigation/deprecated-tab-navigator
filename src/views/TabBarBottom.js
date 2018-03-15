@@ -7,7 +7,11 @@ import {
   Platform,
   Keyboard,
 } from 'react-native';
-import { NavigationActions, withOrientation, SafeAreaView } from 'react-navigation';
+import {
+  SafeAreaView,
+  NavigationActions,
+  withOrientation,
+} from 'react-navigation';
 
 import TabBarIcon from './TabBarIcon';
 
@@ -71,8 +75,7 @@ class TabBarBottom extends React.PureComponent {
               : styles.labelBeneath,
             labelStyle,
           ]}
-          allowFontScaling={allowFontScaling}
-        >
+          allowFontScaling={allowFontScaling}>
           {label}
         </Animated.Text>
       );
@@ -231,8 +234,7 @@ class TabBarBottom extends React.PureComponent {
       <Animated.View style={animateStyle}>
         <SafeAreaView
           style={tabBarStyle}
-          forceInset={{ bottom: 'always', top: 'never' }}
-        >
+          forceInset={{ bottom: 'always', top: 'never' }}>
           {routes.map((route, index) => {
             const focused = index === navigation.state.index;
             const scene = { route, index, focused };
@@ -266,8 +268,7 @@ class TabBarBottom extends React.PureComponent {
                         defaultHandler: this._handleTabPress,
                       })
                     : this._handleTabPress(index)
-                }
-              >
+                }>
                 <Animated.View style={[styles.tab, { backgroundColor }]}>
                   <View
                     style={[
@@ -276,8 +277,7 @@ class TabBarBottom extends React.PureComponent {
                         ? styles.tabLandscape
                         : styles.tabPortrait,
                       tabStyle,
-                    ]}
-                  >
+                    ]}>
                     {this._renderIcon(scene)}
                     {this._renderLabel(scene)}
                   </View>

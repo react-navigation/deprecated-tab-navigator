@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { TabViewAnimated, TabViewPagerPan } from 'react-native-tab-view';
-
 import { ResourceSavingSceneView } from 'react-navigation';
 
 class TabView extends React.PureComponent {

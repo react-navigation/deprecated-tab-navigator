@@ -1,7 +1,11 @@
 import React from 'react';
 import { Platform } from 'react-native';
+import {
+  createNavigationContainer,
+  createNavigator,
+  TabRouter,
+} from 'react-navigation';
 
-import { TabRouter, createNavigator, createNavigationContainer } from 'react-navigation';
 import TabView from './views/TabView';
 import TabBarTop from './views/TabBarTop';
 import TabBarBottom from './views/TabBarBottom';
