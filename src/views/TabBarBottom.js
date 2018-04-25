@@ -75,7 +75,8 @@ class TabBarBottom extends React.PureComponent {
               : styles.labelBeneath,
             labelStyle,
           ]}
-          allowFontScaling={allowFontScaling}>
+          allowFontScaling={allowFontScaling}
+        >
           {label}
         </Animated.Text>
       );
@@ -138,7 +139,7 @@ class TabBarBottom extends React.PureComponent {
         maxTabBarItemWidth = flattenedTabStyle.width;
       } else if (
         typeof flattenedTabStyle.width === 'string' &&
-        flattenedTabStyle.endsWith('%')
+        flattenedTabStyle.width.endsWith('%')
       ) {
         const width = parseFloat(flattenedTabStyle.width);
         if (Number.isFinite(width)) {
@@ -148,7 +149,7 @@ class TabBarBottom extends React.PureComponent {
         maxTabBarItemWidth = flattenedTabStyle.maxWidth;
       } else if (
         typeof flattenedTabStyle.maxWidth === 'string' &&
-        flattenedTabStyle.endsWith('%')
+        flattenedTabStyle.width.endsWith('%')
       ) {
         const width = parseFloat(flattenedTabStyle.maxWidth);
         if (Number.isFinite(width)) {
@@ -234,7 +235,8 @@ class TabBarBottom extends React.PureComponent {
       <Animated.View style={animateStyle}>
         <SafeAreaView
           style={tabBarStyle}
-          forceInset={{ bottom: 'always', top: 'never' }}>
+          forceInset={{ bottom: 'always', top: 'never' }}
+        >
           {routes.map((route, index) => {
             const focused = index === navigation.state.index;
             const scene = { route, index, focused };
@@ -268,7 +270,8 @@ class TabBarBottom extends React.PureComponent {
                         defaultHandler: this._handleTabPress,
                       })
                     : this._handleTabPress(index)
-                }>
+                }
+              >
                 <Animated.View style={[styles.tab, { backgroundColor }]}>
                   <View
                     style={[
@@ -277,7 +280,8 @@ class TabBarBottom extends React.PureComponent {
                         ? styles.tabLandscape
                         : styles.tabPortrait,
                       tabStyle,
-                    ]}>
+                    ]}
+                  >
                     {this._renderIcon(scene)}
                     {this._renderLabel(scene)}
                   </View>
@@ -323,7 +327,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   iconWithLabel: {
-    flexGrow: 1,
+    flex: 1,
   },
   iconWithExplicitHeight: {
     height: Platform.isPad ? DEFAULT_HEIGHT : COMPACT_HEIGHT,
