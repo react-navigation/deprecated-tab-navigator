@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { TabViewAnimated, TabViewPagerPan } from 'react-native-tab-view';
-import { ResourceSavingSceneView } from 'react-navigation';
+import { ResourceSavingSceneView, NavigationActions } from 'react-navigation';
 
 class TabView extends React.PureComponent {
   static defaultProps = {
@@ -15,7 +15,11 @@ class TabView extends React.PureComponent {
 
   _handlePageChanged = index => {
     const { navigation } = this.props;
-    navigation.navigate(navigation.state.routes[index].routeName);
+    navigation.dispatch(
+      NavigationActions.navigate({
+        routeName: navigation.state.routes[index].routeName,
+      })
+    );
   };
 
   _renderScene = ({ route }) => {
