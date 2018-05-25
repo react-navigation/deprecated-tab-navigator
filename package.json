@@ -6,7 +6,7 @@
   "author": "React Navigation <brent@expo.io>",
   "license": "MIT",
   "dependencies": {
-    "react-native-tab-view": "^0.0.74"
+    "react-native-tab-view": "^0.0.77"
   },
   "peerDependencies": {
     "react-native": "*",
