@@ -11,6 +11,7 @@ import {
   SafeAreaView,
   NavigationActions,
   withOrientation,
+  StackActions,
 } from 'react-navigation';
 
 import TabBarIcon from './TabBarIcon';
@@ -194,7 +195,7 @@ class TabBarBottom extends React.PureComponent {
       let childRoute = navigation.state.routes[index];
       if (childRoute.hasOwnProperty('index') && childRoute.index > 0) {
         navigation.dispatch(
-          NavigationActions.popToTop({ key: childRoute.key })
+          StackActions.popToTop({ key: childRoute.key })
         );
       } else {
         // TODO: do something to scroll to top
