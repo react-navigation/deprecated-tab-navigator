@@ -1,11 +1,4 @@
-import createTabNavigator from './createTabNavigator';
-import TabView from './views/TabView';
-import TabBarBottom from './views/TabBarBottom';
-import TabBarTop from './views/TabBarTop';
-
-module.exports = {
-  createTabNavigator,
-  TabView,
-  TabBarBottom,
-  TabBarTop,
-};
+export { default as createTabNavigator } from './createTabNavigator';
+export { default as TabView } from './views/TabView';
+import { default as TabBarBottom } from './views/TabBarBottom';
+import { default as TabBarTop } from './views/TabBarTop';
