@@ -8,6 +8,10 @@
   "dependencies": {
     "react-native-tab-view": "^0.0.77"
   },
+  "repository": {	
+    "type": "git",
+    "url": "https://github.com/react-navigation/deprecated-tab-navigator.git"
+  },
   "peerDependencies": {
     "react-native": "*",
     "react-navigation": "*"
